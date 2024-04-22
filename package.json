@@ -10,6 +10,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.5.9"
+    "@astrojs/tailwind": "^5.1.0",
+    "@fontsource/gabriela": "^5.0.19",
+    "astro": "^4.5.9",
+    "swiper": "^11.1.1",
+    "swiper-bundle": "^0.0.1-security",
+    "tailwindcss": "^3.4.1"
   }
 }

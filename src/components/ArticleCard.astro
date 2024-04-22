@@ -1,0 +1,17 @@
+---
+interface Props{
+    title: string;
+    coverImage: string;
+    excerpt: string;
+    slug: string;
+}
+
+const { title, coverImage, excerpt,slug }: Props = Astro.props;
+---
+
+<div>
+    <h2>{title}</h2>
+    <img src={coverImage} alt={title} />
+    <p>{excerpt}</p>
+    <a href={`/blog/${slug}`}>Read more</a>
+</div>

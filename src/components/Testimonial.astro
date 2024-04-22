@@ -1,0 +1,35 @@
+---
+interface Props{
+    title: string;
+    description: string;
+    owner: string;
+    position: string;
+    url: string;
+    url_text: string;
+}
+
+const { title, description, owner, position, url, url_text }: Props = Astro.props;
+---
+
+<div class="swiper-slide testimonial flex flex-col px-4">
+    <div class="flex justify-between ">
+        <h3 class="text-3xl font-gabriela text-[#171F29] italic mt-2">{title}</h3>
+    </div>
+    <div>
+        <p class="font-inter text-sm">{description}</p>
+    <div class="flex flex-col items-end">
+        <div class="uppercase font-[400] italic font-inter">{owner}</div>
+        <div class=" font-[900] font-inter">{position}</div>
+        <div><a href={url} class="text-black text-[10px] font-[400] text-end">{url_text}</a></div>
+    </div>
+    </div>
+</div>
+
+<style>
+    .testimonial{
+        flex: 0 0 auto; /* Prevent items from shrinking */
+  width: 100%; /* Adjust the width as per your design */
+  margin: 10px; 
+  scroll-snap-align: center; /* Center each item within the view */
+}
+</style>

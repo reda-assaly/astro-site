@@ -1,0 +1,33 @@
+---
+
+import 'swiper/css';
+import Client from './Client.astro';
+const allClients = await Astro.glob('../content/clients/*.md');
+
+---
+
+<div class="swiper client-swiper">
+  <div class="swiper-wrapper">
+    {allClients.map((client) => (
+      <Client 
+                title={client.frontmatter.name}
+                description= {client.frontmatter.description} 
+                subtitle= {client.frontmatter.subtitle}
+                flag={client.frontmatter.flag} />
+    ))}
+  </div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>
+
+<script>
+    import Swiper from 'swiper';
+
+  const swiper = new Swiper('.client-swiper', {
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    
+  });
+</script>

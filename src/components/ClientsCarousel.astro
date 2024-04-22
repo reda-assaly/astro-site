@@ -1,0 +1,78 @@
+---
+import Client from "./Client.astro"
+const allClients = await Astro.glob("../content/clients/*.md");
+
+---
+<button 
+    onclick="nextSlide()" class="relative right-[-90%] top-[45px]"><img src="../../assets/clients-slider-arrow.svg" alt="" ></button>
+
+<div class="carousel">
+    
+    {
+        allClients.map((client, index) => {
+            return (
+                <Client 
+                title={client.frontmatter.name}
+                description= {client.frontmatter.description} 
+                subtitle= {client.frontmatter.subtitle}
+                flag={client.frontmatter.flag} />
+            )
+        })
+    }
+</div>
+
+<style>
+    .carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory; 
+  scroll-behavior: smooth; /* Optionally add smooth scroll*/
+}
+</style>
+
+<script is:inline>
+    const carousel = document.querySelector('.carousel');
+  
+    function prevSlide() {
+      carousel.scrollLeft -= carousel.offsetWidth; 
+    }
+  
+    function nextSlide() {
+    const atEnd = (carousel.scrollLeft) >= (carousel.scrollWidth - carousel.offsetWidth - 10);
+    console.log(atEnd)
+
+    if (atEnd) {
+        smoothScrollTo(carousel, 0);
+    //   carousel.scrollLeft = 0; 
+    } else {
+    //   carousel.scrollLeft += carousel.offsetWidth;
+        smoothScrollTo(carousel, carousel.scrollLeft + carousel.offsetWidth);
+    }
+  }
+
+  function smoothScrollTo(element, target) {
+  let start = element.scrollLeft;
+  let change = target - start;
+  let currentTime = 0;
+  let increment = 20; // Adjust for smoothness
+  const duration = 500; // Duration in milliseconds
+
+  const animateScroll = function() {        
+    currentTime += increment;
+    const val = easeInOutQuad(currentTime, start, change, duration);
+    element.scrollLeft = val;
+    if (currentTime < duration) {
+        setTimeout(animateScroll, increment);
+    }
+  };
+  animateScroll();
+}
+
+// Easing function (Optional, but highly recommended)
+function easeInOutQuad(t, b, c, d) {
+  t /= d/2;
+  if (t < 1) return c/2*t*t + b;
+  t--;
+  return -c/2 * (t*(t-2) - 1) + b;
+};
+  </script>

@@ -1,0 +1,37 @@
+---
+import Swiper from 'swiper/bundle';
+
+import "swiper/css";
+import Testimonial from "./Testimonial.astro";
+const allTestimonials = await Astro.glob("../content/testimonials/*.md");
+---
+
+<div class="swiper testimonials-swiper">
+  <div class="swiper-button-next relative right-[-90%]"
+    ><img src="../../assets/clients-slider-arrow.svg" alt="" /></div
+  >
+
+  <div class="swiper-wrapper">
+    {
+      allTestimonials.map((client) => (
+        <Testimonial
+          title={client.frontmatter.title}
+          description={client.frontmatter.description}
+          owner={client.frontmatter.owner}
+          url={client.frontmatter.url}
+          position={client.frontmatter.position}
+          url_text={client.frontmatter.url_text}
+        />
+      ))
+    }
+  </div>
+</div>
+<script>
+  import Swiper from "swiper";
+
+  const swiper = new Swiper(".testimonials-swiper", {
+    navigation: {
+      nextEl: ".swiper-button-next"
+    },
+  });
+</script>

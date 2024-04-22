@@ -1,0 +1,17 @@
+---
+import ArticleCard from "./ArticleCard.astro";
+
+const allPosts = await Astro.glob("../content/blogs/*.md");
+---
+
+ {
+     allPosts.map((post) => {
+  return(
+    <ArticleCard
+      title={post.frontmatter.title}
+      slug={post.frontmatter.slug}
+      coverImage={post.frontmatter.coverImage}
+      excerpt={post.frontmatter.excerpt} />
+    );
+})
+ }

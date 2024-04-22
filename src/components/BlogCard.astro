@@ -1,0 +1,15 @@
+---
+const { title, coverImage, excerpt, slug,category } = Astro.props;
+
+
+---
+
+<div>
+    <div class="flex mb-[18px]">
+        <div class="bg-white rounded-[7px] text-[#171F29] font-inter font-[700] text-[10px] uppercase px-3 py-[6px]">{category}</div>
+    </div>
+    <div class="grid grid-cols-[3fr,1fr]">
+        <p class="text-white font-inter">{excerpt}</p>
+        <a class="text-[#FEEF50] italic underline" href={`/blog/${slug}`}>Read more</a>
+    </div>
+</div>

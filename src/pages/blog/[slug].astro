@@ -1,0 +1,32 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+const { slug } = Astro.params;
+const collection = await getCollection('blogs');
+const entry = collection.find((post) => post.slug === slug);
+
+const { Content } = await entry.render();
+
+
+export async function getStaticPaths() {
+  const blogs = await getCollection('blogs');
+    const paths = blogs.map((post) => ({
+        params: { slug: post.slug },
+    }));
+
+    return paths;
+}
+---
+<Layout title='blog'>
+<article>
+  <h1>{entry.data.title}</h1>
+  <img src={'/'+entry.data.coverImage} alt={entry.data.title} />
+  <Content />
+</article>
+</Layout>
+
+<style>
+    h1 {
+        color: #fff;
+    }
+</style>
