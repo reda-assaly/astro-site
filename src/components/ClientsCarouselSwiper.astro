@@ -16,18 +16,16 @@ const allClients = await Astro.glob('../content/clients/*.md');
                 flag={client.frontmatter.flag} />
     ))}
   </div>
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
+  <div class="swiper-button-next"><img src="/clients-slider-arrow.svg" alt=""></div>
 </div>
 
-<script>
-    import Swiper from 'swiper';
+<style>
+  .swiper-button-next{
+    top:24px !important;
+  }
+  .swiper-button-next::after{
+    content: none  !important;
+  }
+</style>
 
-  const swiper = new Swiper('.client-swiper', {
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    
-  });
-</script>
+<script src="../libs/simple-slider.js"></script>

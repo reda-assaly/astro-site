@@ -26,12 +26,14 @@ const allTestimonials = await Astro.glob("../content/testimonials/*.md");
     }
   </div>
 </div>
-<script>
-  import Swiper from "swiper";
 
-  const swiper = new Swiper(".testimonials-swiper", {
-    navigation: {
-      nextEl: ".swiper-button-next"
-    },
-  });
-</script>
+<style>
+  .swiper-button-next{
+    top:24px !important;
+  }
+  .swiper-button-next::after{
+    content: none  !important;
+  }
+</style>
+<script src="../libs/simple-slider.js"></script>
+  
