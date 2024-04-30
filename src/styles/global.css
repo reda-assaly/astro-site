@@ -17,3 +17,11 @@ h1, h2, h3 {
   font-style: normal;  /* Adjust as needed */
   font-display: swap;  /* Ensures smooth loading */
 }
+
+@font-face {
+  font-family: 'Gabriela'; /* Name you'll use to reference the font */
+  src: url('/fonts/Gabriela-RegularItalic.woff2') format('woff2');
+  font-weight: normal; /* Adjust as needed */
+  font-style: italic;  /* Adjust as needed */
+  font-display: swap;  /* Ensures smooth loading */
+}

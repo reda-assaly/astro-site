@@ -29,13 +29,13 @@ import CaseStudiesList from '../components/CaseStudiesList.astro';
 			<section class="">
 				<ClientsCarouselSwiper />
 				<div class="flex justify-start mt-6 mx-3 mb-3">
-					<div class="font-inter uppercase text-[#171F29] bg-[#F7EC13] font-extrabold p-2 rounded-tr-md rounded-bl-md">
+					<div class="font-inter uppercase text-[#171F29] bg-[#F7EC13] text-xs leading-4 font-[700] text-center px-[9px] py-[3px] rounded-tr-md rounded-bl-md">
 						Grow with us
 					</div>
 				</div>
 			</section>
 	
-			<section class="bg-white mt-[26px]">
+			<section class="bg-white ">
 				<h3 class="font-inter text-[#171F29] uppercase text-[14px] text-center">Future proof your e-commerce</h3>
 				<div><hr /></div>
 				<CaseStudiesList />
@@ -64,23 +64,27 @@ import CaseStudiesList from '../components/CaseStudiesList.astro';
 				<img class="w-4 h-4" src="/3.svg" alt="">			
 				<img class="w-4 h-4" src="/4.svg" alt="">			
 			</section>
-			<section class="bg-[#171F29] flex w-full px-5 pt-8 pb-4 fixed bottom-0">
-				<div class="font-inter uppercase text-[#171F29] bg-[#F7EC13] font-extrabold p-2 rounded-tr-md rounded-bl-md">
-					Hire Us
-				</div>
-			</section>
+			
 			<section>
 				<BlogsFooterGrid />
+			</section>
+			
+			<section class="bg-[url('/china-mob.webp')] bg-cover h-[480px] flex w-full ">
+				<div class="max-w-[933px] w-full mx-auto">
+					<div class="flex justify-between items-start bg-[#B92D32] text-white font-gabriela text-[30px] font-[600] italic w-full mt-8 px-6"><div class="pb-2 leading-normal">Is China on your <br>growth horizon?</div>
+					<img class="mt-4" src="/next-white.svg" alt="">
+				</div>
+				</div>
 			</section>
 			<section class="bg-white w-full flex justify-between px-3">
 				<Partners />
 			</section>
-			<section class="bg-[url('/china-mob.webp')] bg-cover h-[480px] flex w-full ">
-				<div class="max-w-[933px] w-full mx-auto">
-					<div class="flex justify-between items-start bg-[#B92D32] text-white font-gabriela text-[30px] font-[600] italic w-full mt-8 px-6"><div>Is China on your <br>growth horizon?</div>
-					<img class="mt-4" src="/next-white.svg" alt="">
+			<div id="no-fixed"></div>
+			<section id="hire-us" class="bg-[#171F29] flex justify-between w-full items-center px-5 pt-8 pb-4 fixed bottom-0">
+				<div class="font-inter uppercase text-[#171F29] bg-[#F7EC13] font-extrabold p-2 rounded-tr-md rounded-bl-md">
+					Hire Us
 				</div>
-				</div>
+				<button id="back-to-top" class="font-inter text-[12px] font-[500] leading-normal uppercase underline text-white">Back To Top</button>
 			</section>
 			<footer>
 				<FooterMobile />
@@ -161,4 +165,27 @@ import CaseStudiesList from '../components/CaseStudiesList.astro';
 		</div>
 </Layout>
 
-
+<script>
+					const observer = new IntersectionObserver(entries => {
+						entries.forEach(entry => {
+							if (entry.target.id === 'no-fixed' && entry.isIntersecting) {
+								document.querySelector('#hire-us').classList.remove('fixed')
+							}
+							else{
+								document.querySelector('#hire-us').classList.add('fixed')
+							}
+						})
+					})
+					observer.observe(document.querySelector('#no-fixed'))
+					window.addEventListener('scroll', function() {
+						var backToTopButton = document.getElementById('back-to-top');
+						if (window.pageYOffset > 500) {
+							backToTopButton.style.display = "block";
+						} else {
+							backToTopButton.style.display = "none";
+						}
+					});
+					document.getElementById('back-to-top').addEventListener('click', function() {
+						window.scrollTo({ top: 0, behavior: 'smooth' });
+					})
+				</script>

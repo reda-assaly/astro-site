@@ -15,19 +15,19 @@ const { Content } =  entry;
 ---
 
 <div class="cs-container px-4 pt-4 w-full mb-8 border-none">
-  <div class="flex flex-wrap gap-2 mb-4">
+  <div class="flex flex-wrap gap-x-2 gap-y-3 mb-4">
     {
       servicesArray.map((service) => (
-        <div class="pill border border-1 flex justify-center px-[10px] py-[3px] border-[#171F29] rounded-md font-inter font-[400] text-[10px] uppercase">
+        <div class="pill border border-1 flex justify-center px-[10px] py-[3px] border-[#171F29] rounded-md font-inter font-[400] text-[10px] uppercase leading-4">
           {service}
         </div>
       ))
     }
   </div>
   <div class="flex justify-between">
-    <h2 class="font-gabriela text-[30px] text-[#171F29]">{title}</h2>
+    <h2 class="font-gabriela text-[30px] text-[#171F29] italic leading-[30px]">{title}</h2>
     <button
-      class="toggleButton justify-self-end self-start bg-[#FEEF50] px-[9px] py-[3px] rounded-tr-[7px] rounded-bl-[7px] font-inter font-[700] uppercase"
+      class="toggleButton justify-self-end self-start bg-[#FEEF50] px-[9px] py-[3px] rounded-tr-[7px] rounded-bl-[7px] font-inter font-[700] uppercase leading-[16px] text-[12px] text-[#171F29]"
       >MORE</button>
   </div>
   <div class="h-[2px] bg-[#171F29]/[0.2] my-3"><hr></div>

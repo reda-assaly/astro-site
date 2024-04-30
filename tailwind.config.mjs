@@ -4,8 +4,8 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				'gabriela': ['Gabriela', 'serif'],
-				'inter': ['Inter', 'sans-serif'],
+				'gabriela': ['Gabriela'],
+				'inter': ['Inter'],
 			},
 		},
 	},
