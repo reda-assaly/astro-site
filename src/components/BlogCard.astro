@@ -10,6 +10,6 @@ const { title, coverImage, excerpt, slug,category } = Astro.props;
     </div>
     <div class="grid grid-cols-[3fr,1fr]">
         <p class="text-white font-inter">{excerpt}</p>
-        <a class="text-[#FEEF50] italic underline" href={`/blog/${slug}`}>Read more</a>
+        <a class="text-[#FEEF50] italic underline" href={`/blog/${slug}`} title={`Link to ${title}`}>Read more</a>
     </div>
 </div>
