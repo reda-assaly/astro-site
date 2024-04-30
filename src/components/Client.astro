@@ -11,12 +11,12 @@ const { title, description, flag, subtitle }: Props = Astro.props;
 
 <div class="swiper-slide client bg-[#FEEF50] flex flex-col px-5">
     <div class="flex justify-between ">
-        <h3 class="text-3xl font-gabriela text-[#171F29] italic mt-2 mb-0 leading-[42.5px]">{title}</h3>
+        <h3 class="text-[30px] font-gabriela font-[600] text-[#171F29] italic mt-2 mb-0 leading-normal">{title}</h3>
     </div>
     <div>
-        <p class="font-inter uppercase text-sm text-[#171F29]">{description}</p>
+        <p class="font-inter uppercase text-sm text-[#171F29] leading-normal">{description}</p>
     <div class="grid grid-cols-[3fr,1fr] content-end">
-        <div class="uppercase font-[900] font-inter text-[#171F29]">{subtitle}</div>
+        <div class="uppercase font-[900] font-inter text-[12px] text-[#171F29]">{subtitle}</div>
         <img src= {flag} alt="flag" class="w-12 mb-2 text-[#171F29] justify-self-end" />
     </div>
     </div>

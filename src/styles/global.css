@@ -26,18 +26,4 @@ h1, h2, h3 {
   font-display: swap;  /* Ensures smooth loading */
 }
 
-@font-face {
-  font-family: 'Inter'; /* Name you'll use to reference the font */
-  src: url('/fonts/Inter-Regular.woff2') format('woff2');
-  font-weight: normal; /* Adjust as needed */
-  font-style: normal;  /* Adjust as needed */
-  font-display: swap;  /* Ensures smooth loading */
-}
 
-@font-face {
-  font-family: 'Inter'; /* Name you'll use to reference the font */
-  src: url('/fonts/Inter-ExtraLight.woff2') format('woff2');
-  font-weight: 200; /* Adjust as needed */
-  font-style: normal;  /* Adjust as needed */
-  font-display: swap;  /* Ensures smooth loading */
-}
