@@ -11,16 +11,21 @@ interface Props{
 const { title, description, owner, position, url, url_text }: Props = Astro.props;
 ---
 
-<div class="swiper-slide testimonial flex flex-col px-3">
-    <div class="flex justify-between ">
+<div class="swiper-slide testimonial flex flex-col px-2">
+    <div class="flex justify-between pl-4 ">
         <h3 class="text-3xl font-gabriela text-[#171F29] italic mt-2">{title}</h3>
     </div>
     <div>
-        <p class="font-inter text-sm">{description}</p>
+        <p class="font-gabriela text-[16px] font-[400] leading-[22.6px] italic pl-3 pr-[26px] text-[#171F29]">{description}</p>
     <div class="flex flex-col items-end">
-        <div class="uppercase font-[400] italic font-inter">{owner}</div>
-        <div class=" font-[900] font-inter">{position}</div>
-        <div><a href={url} class="text-black text-[10px] font-[400] text-end">{url_text}</a></div>
+        <div class="flex justify-end gap-x-2">
+            <div class="uppercase font-[400] italic font-inter">{owner}</div>
+            <img src="/testimonial-badge.svg" alt="badge">
+
+        </div>
+        <div class=" font-[900] font-inter pr-[26px] leading-[14.5px]">{position}</div>
+        <div class="p-0 m-0 pr-[26px]">
+            <a href={url} class="text-[#1DA1F2] leading-3 h-3 text-[10px] font-[400] text-end">{url_text}</a></div>
     </div>
     </div>
 </div>
