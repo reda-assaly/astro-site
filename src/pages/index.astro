@@ -16,7 +16,7 @@ import CaseStudiesList from '../components/CaseStudiesList.astro';
 <Layout title="Assaly.ch">
 	
 		
-		<div class="mobile mb-32 lg:hidden">
+		<div class="mobile lg:hidden">
 			<section>
 				<div class="px-5 mt-[30px]">
 					<p class="font-inter text-white text-3xl font-[200] leading-normal">We are a hyper-modern e-commerce <span class="font-medium">agency</span> epitomizing digital virtuosity and prescient innovation. </p>
@@ -29,14 +29,14 @@ import CaseStudiesList from '../components/CaseStudiesList.astro';
 			<section class="">
 				<ClientsCarouselSwiper />
 				<div class="flex justify-start mt-6 mx-3 mb-3">
-					<div class="font-inter uppercase text-[#171F29] bg-[#F7EC13] text-xs leading-4 font-[700] text-center px-[9px] py-[3px] rounded-tr-md rounded-bl-md">
+					<div class="inline-flex justify-center items-center gap-[10px] h-[22px] font-inter uppercase text-[#171F29] bg-[#F7EC13] text-xs leading-4 font-[700] text-center px-[9px] py-[3px] rounded-tr-[7px] rounded-bl-[7px]">
 						Grow with us
 					</div>
 				</div>
 			</section>
 	
 			<section id="case-studies" class="bg-white ">
-				<h3 class="font-inter text-[#171F29] uppercase text-[14px] text-center leading-4 font-[700] pt-[26px]">Future proof your e-commerce</h3>
+				<h3 class="font-inter text-[#171F29] uppercase text-[14px] pl-[19px] leading-4 font-[700] pt-[26px]">Future proof your e-commerce</h3>
 				<div><hr /></div>
 				<CaseStudiesList />
 			</section>
@@ -45,7 +45,7 @@ import CaseStudiesList from '../components/CaseStudiesList.astro';
 				<TestimonialCarousel />
 			</section>
 			<section>
-				<div class="h-[540px] bg-cover flex flex-col justify-end" style="background-image: url('/case-studies.webp');">
+				<div class="h-[480px] bg-cover flex flex-col justify-end" style="background-image: url('/case-studies.webp');">
 					<div class="flex bg-[#FEEF50] justify-between relative bottom-5 px-[19px]">
 						<div class="font-gabriela text-[30px] text-[#171F29] italic font-[600] ">Case Studies</div>
 						<img src="/clients-slider-arrow.svg" alt="">
@@ -81,7 +81,8 @@ import CaseStudiesList from '../components/CaseStudiesList.astro';
 			</section>
 			<div id="no-fixed"></div>
 			<section id="hire-us" class="bg-[#171F29] flex justify-between w-full items-center px-5 pt-8 pb-4 fixed bottom-0">
-				<div class="font-inter uppercase text-[#171F29] bg-[#F7EC13] font-[700] p-2 rounded-tr-md rounded-bl-md">
+				<div class="
+					inline-flex justify-center items-center gap-[10px] h-[22px] font-inter text-xs uppercase text-[#171F29] bg-[#F7EC13] font-[700] p-2 rounded-tr-md rounded-bl-md">
 					Grow with us
 				</div>
 				<button id="back-to-top" class="font-inter text-[12px] font-[500] leading-normal uppercase underline text-white">Back To Top</button>
