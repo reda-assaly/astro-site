@@ -15,8 +15,8 @@ const { title, description, flag, subtitle }: Props = Astro.props;
     </div>
     <div>
         <p class="font-inter uppercase text-sm text-[#171F29] leading-normal">{description}</p>
-    <div class="grid grid-cols-[3fr,1fr] content-end">
-        <div class="uppercase font-[900] font-inter text-[12px] text-[#171F29]">{subtitle}</div>
+    <div class="grid grid-cols-[3fr,1fr] content-end align-bottom">
+        <div class="flex flex-col justify-end pb-[5px] uppercase font-[900] font-inter text-[12px] text-[#171F29]">{subtitle}</div>
         <img src= {flag} alt="flag" class="w-12 mb-2 text-[#171F29] justify-self-end" />
     </div>
     </div>
