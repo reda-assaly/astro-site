@@ -14,7 +14,7 @@ const { Content } =  entry;
 
 ---
 
-<div class="cs-container px-4 pt-[31px] w-full mb-8 border-none">
+<div class="cs-container px-4 pt-[31px] w-full border-none">
   <div class="flex flex-wrap gap-x-2 gap-y-3 mb-4">
     {
       servicesArray.map((service) => (
@@ -30,7 +30,7 @@ const { Content } =  entry;
       class="toggleButton justify-self-end mb-[15px] bg-[#FEEF50] px-[9px] py-[3px] rounded-tr-[7px] rounded-bl-[7px] font-inter font-[700] uppercase leading-[16px] text-[10px] text-[#171F29]"
       >MORE</button>
   </div>
-  <div class="h-[1px] bg-[#171F29]/[0.2] my-3"><hr></div>
+  <div class="hr h-[1px] bg-[#171F29]/[0.2]"><hr></div>
   <div class="cs-content hidden " style="transition: max-height 0.7s ease-out;">
     <div class="flex flex-col flex-1 font-inter text-[14px] font-[400] leading-[21px]" ><Content /></div>
     <div>
@@ -64,6 +64,7 @@ const { Content } =  entry;
       container.classList.add("min-h-screen", "bg-[#FEEF50]","flex","flex-col","flex-1","h-full","open");
       container.querySelector(".cs-content").classList.add("flex", "flex-col", "flex-1");
       container.querySelector(".cs-content").classList.remove("hidden");
+      container.querySelector(".hr").classList.add("hidden");
       this.classList.add("hidden");
     });
   });
@@ -76,6 +77,7 @@ const { Content } =  entry;
       container.querySelector(".cs-content").classList.remove("flex", "flex-col", "flex-1");
       container.querySelector(".cs-content").classList.add("hidden");
       container.querySelector(".toggleButton").classList.remove("hidden");
+      container.querySelector(".hr").classList.remove("hidden");
     });
   });
 </script>
