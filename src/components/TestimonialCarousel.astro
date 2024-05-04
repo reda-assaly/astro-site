@@ -6,7 +6,7 @@ import Testimonial from "./Testimonial.astro";
 const allTestimonials = await Astro.glob("../content/testimonials/*.md");
 ---
 
-<div class="swiper testimonials-swiper">
+<div class="swiper testimonials-swiper ">
   <div class="swiper-button-next relative right-[19px] top-[0px]"
     ><img src="/clients-slider-arrow.svg" alt="" /></div
   >
@@ -28,9 +28,14 @@ const allTestimonials = await Astro.glob("../content/testimonials/*.md");
 </div>
 
 <style>
+
+  .testimonials-swiper {
+    padding-top: 20px !important;
+  }
   .swiper-button-next{
-    /* top:10px !important; */
+    top:10px !important;
     right: 19px !important;
+    left: unset !important;
     background-color: yellow !important;
   }
   .swiper-button-next::after{
