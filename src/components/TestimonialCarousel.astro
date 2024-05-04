@@ -7,7 +7,7 @@ const allTestimonials = await Astro.glob("../content/testimonials/*.md");
 ---
 
 <div class="swiper testimonials-swiper">
-  <div class="swiper-button-next relative right-[-90%]"
+  <div class="swiper-button-next relative right-[19px] top-[0px]"
     ><img src="/clients-slider-arrow.svg" alt="" /></div
   >
 
@@ -29,7 +29,7 @@ const allTestimonials = await Astro.glob("../content/testimonials/*.md");
 
 <style>
   .swiper-button-next{
-    top:30px !important;
+    top:10px !important;
   }
   .swiper-button-next::after{
     content: none  !important;
