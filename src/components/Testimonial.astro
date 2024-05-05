@@ -19,12 +19,12 @@ const { title, description, owner, position, url, url_text }: Props = Astro.prop
         <p class="font-gabriela text-[16px] font-[400] leading-normal italic pr-[26px] text-[#171F29]">{description}</p>
     <div class="flex flex-col items-end pt-[18px]">
         <div class="flex justify-end gap-x-2">
-            <div class="uppercase font-[400] italic font-inter">{owner}</div>
+            <div class="font-[400] italic font-inter">{owner}</div>
             <img src="/testimonial-badge.svg" alt="badge">
 
         </div>
-        <div class=" font-[900] font-inter pr-[26px] leading-[14.5px]">{position}</div>
-        <div class="p-0 m-0 pr-[26px]">
+        <div class=" font-[900] font-inter pr-[20px] leading-[14.5px]">{position}</div>
+        <div class="p-0 m-0 pr-[20px]">
             <a href={url} class="text-[#1DA1F2] leading-3 h-3 text-[10px] font-[400] text-end">{url_text}</a></div>
     </div>
     </div>
