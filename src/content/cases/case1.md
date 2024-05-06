@@ -1,6 +1,7 @@
 ---
 title: Digital Design
 services: UI/UX,Online branding,ACCESSIBILITY
+definitions: UI/UX crafts user interfaces (UI) for intuitive interaction & positive user experiences (UX)|| Online branding is the process of strategically shaping how your business or personal brand is perceived in the digital world. || Online accessibility is the practice of designing websites, tools, and technologies so that people with disabilities can use them effectively.
 
 ---
 

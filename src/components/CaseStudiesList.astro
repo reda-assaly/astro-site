@@ -8,6 +8,6 @@ const caseStudies = await getCollection('cases')
 <div class="flex flex-col">
 					
     {caseStudies.map((caseStudy) => (
-        <CaseStudy title={caseStudy.data.title.toString()} services={caseStudy.data.services.toString()}  />
+        <CaseStudy title={caseStudy.data.title.toString()} services={caseStudy.data.services.toString()} definitions={caseStudy.data.definitions.toString()} />
     ))}
 </div>

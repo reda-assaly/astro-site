@@ -3,27 +3,32 @@ import Markdown from 'astro:components';
 interface Props {
   title: string;
   services: string;
+  definitions: string;
   body:any
 }
 
-const { services, title } = Astro.props;
+const { services, title, definitions } = Astro.props;
 const servicesArray = services.split(',');
+const definitionsArray = services.split('||');
 const collection = await Astro.glob('../content/cases/*.md');
 const entry = collection.find((post) => post.frontmatter.title === title);
 const { Content } =  entry;
 
+
 ---
 
-<div class="cs-container px-4 pt-[31px] w-full border-none">
+<div class="cs-container px-4 pt-[31px] w-full border-none" data-services={services} data-definitions={definitions}>
   <div class="flex flex-wrap gap-x-2 gap-y-3 mb-4">
     {
-      servicesArray.map((service) => (
-        <div class="pill border-[1px] inline-flex items-center gap-[10px] justify-center px-[10px] py-[3px] border-[#171F29] rounded-[7px] font-inter font-[400] text-[10px] uppercase leading-4">
+      servicesArray.map((service, index) => (
+        <div class="pill border-[1px] inline-flex items-center gap-[10px] justify-center px-[10px] py-[3px] border-[#171F29] rounded-[7px] font-inter font-[400] text-[10px] uppercase leading-4"
+        data-index={index}>
           {service}
         </div>
       ))
     }
   </div>
+  <div  class="definitions my-4 font-inter text-[12px] font-[400] leading-[16px]"></div>
   <div class="flex justify-between items-end">
     <h2 class="font-gabriela text-[30px] text-[#171F29] font-[600] italic leading-[30px]">{title}</h2>
     <button
@@ -53,9 +58,16 @@ const { Content } =  entry;
   .cs-container{
     transition: all 0.7s ease;
   }
+
+  .pill.active{
+    background-color: #FEEF50;
+    font-weight: 700;
+  }
 </style>
 
 <script>
+  
+  
   document.querySelectorAll(".toggleButton").forEach((button) => {
     button.addEventListener("click", function () {
       var content = this.parentNode.nextElementSibling;
@@ -73,6 +85,8 @@ const { Content } =  entry;
     button.addEventListener("click", function () {
       var content = this.parentNode.nextElementSibling;
       var container = this.closest(".cs-container");
+      
+
       container.classList.remove("min-h-screen", "bg-[#FEEF50]","flex","flex-col","flex-1","h-full","open");
       container.querySelector(".cs-content").classList.remove("flex", "flex-col", "flex-1");
       container.querySelector(".cs-content").classList.add("hidden");
@@ -80,4 +94,32 @@ const { Content } =  entry;
       container.querySelector(".hr").classList.remove("hidden");
     });
   });
+
+  document.querySelectorAll(".pill").forEach((item) => {
+  item.addEventListener("click", function () {
+    var container = this.closest(".cs-container")
+    let jsServices = container.getAttribute("data-services").split(',');
+      let jsDefinitions = container.getAttribute("data-definitions").split('||');
+    if(item.classList.contains("active")){
+      item.classList.remove("active");
+      container.querySelector(".definitions").innerHTML = "";
+    }else{
+      document.querySelectorAll(".pill").forEach((pill) => {
+        pill.classList.remove("active");
+      })
+      document.querySelectorAll(".definitions").forEach((definition) => {
+        definition.innerHTML = "";
+      });
+      item.classList.add("active");
+      const itemText = item.innerHTML;
+    let index = parseInt(item.getAttribute('data-index'));
+    let definition = jsDefinitions[index];
+    if (index > -1) { 
+      container.querySelector(".definitions").innerHTML = definition
+    }
+    }
+    
+    
+  });
+});
 </script>
