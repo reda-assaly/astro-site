@@ -1,8 +1,8 @@
 ---
-title: nhf-logo.svg
-description: “assaly.ch demonstrated unparalleled professionalism, responsiveness, and patience throughout the entire process of launching my website. Their commitment to excellence and dedication to customer satisfaction truly sets them apart.”
-owner: Lea Rezkallah
-position: Founder, no hard feelings
-url: https://nohardfeelings.shop
-url_text: nohardfeelings.shop
+title: FunFactoryLogo.svg
+description: “Our website functionality has improved significantly with their development support, and their expertise in SEO has lead to a steady increase in qualified traffic. We would recommend them.”
+owner: Eleanore (Nora) Langknecht
+position: Marketing Manager, Fun Factory USA
+url: us.funfactory.com
+url_text: us.funfactory.com
 ---
