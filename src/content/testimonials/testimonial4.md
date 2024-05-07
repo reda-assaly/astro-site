@@ -1,5 +1,5 @@
 ---
-title: pow-logo.svg
+title: pow-logo.png
 description: “After our business faced numerous challenges with PPC, assaly.ch was able to use their expertise in digital marketing and the adult industry to get us approved campaigns that finally drove orders!”
 owner: Justin Depow
 position: President, Pow Product Inc.
