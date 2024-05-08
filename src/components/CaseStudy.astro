@@ -39,7 +39,7 @@ const { Content } =  entry;
   <div class="cs-content hidden " style="transition: max-height 0.7s ease-out;">
     <div class="flex flex-col flex-1 font-inter text-[14px] font-[400] leading-[21px]" ><Content /></div>
     <div>
-      <div class="h-8 flex justify-between items-end mb-16">
+      <div class="h-8 flex justify-between items-end mb-8">
         <div class="bg-[#171F29] px-[9px] py-[3px] rounded-tr-[7px] rounded-bl-[7px] font-inter font-[700] uppercase text-white text-[12px]">CASE STUDIES</div>
         <button class="closeButton text-[#171F29] underline uppercase font-inter font-[700] text-[10px]">CLOSE</button>
       </div>
@@ -73,7 +73,7 @@ const { Content } =  entry;
       var content = this.parentNode.nextElementSibling;
       var container = this.closest(".cs-container");
 
-      container.classList.add("min-h-screen", "bg-[#FEEF50]","flex","flex-col","flex-1","h-full","fixed","top-0","left-0","z-50","open");
+      container.classList.add("min-h-[100svh]", "bg-[#FEEF50]","flex","flex-col","flex-1","h-full","fixed","top-0","left-0","z-50","open");
       container.querySelector(".cs-content").classList.add("flex", "flex-col", "flex-1");
       container.querySelector(".cs-content").classList.remove("hidden");
       container.querySelector(".hr").classList.add("hidden");
@@ -88,7 +88,7 @@ const { Content } =  entry;
       var container = this.closest(".cs-container");
       
 
-      container.classList.remove("min-h-screen", "bg-[#FEEF50]","flex","flex-col","flex-1","h-full","fixed","top-0","left-0","z-50","open");
+      container.classList.remove("min-h-[100svh]", "bg-[#FEEF50]","flex","flex-col","flex-1","h-full","fixed","top-0","left-0","z-50","open");
       container.querySelector(".cs-content").classList.remove("flex", "flex-col", "flex-1");
       container.querySelector(".cs-content").classList.add("hidden");
       container.querySelector(".toggleButton").classList.remove("hidden");
