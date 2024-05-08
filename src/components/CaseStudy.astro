@@ -63,6 +63,12 @@ const { Content } =  entry;
     background-color: #FEEF50;
     font-weight: 700;
   }
+  .open .pill.active{
+    background-color: #fff;
+    color: #171F29;
+    font-weight: 700;
+    
+  }
 </style>
 
 <script>
@@ -78,6 +84,7 @@ const { Content } =  entry;
       container.querySelector(".cs-content").classList.remove("hidden");
       container.querySelector(".hr").classList.add("hidden");
       this.classList.add("hidden");
+      document.querySelector(".pill").classList.remove("active");
       document.querySelector("body").classList.add("overflow-hidden");
     });
   });
@@ -93,6 +100,7 @@ const { Content } =  entry;
       container.querySelector(".cs-content").classList.add("hidden");
       container.querySelector(".toggleButton").classList.remove("hidden");
       container.querySelector(".hr").classList.remove("hidden");
+      document.querySelector(".pill").classList.remove("active");
       document.querySelector("body").classList.remove("overflow-hidden");
     });
   });
