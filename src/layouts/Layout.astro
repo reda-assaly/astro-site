@@ -6,6 +6,9 @@ interface Props {
 const { title } = Astro.props;
 
 import '../styles/global.css';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+const currentLang = Astro.params.lang || 'en';
 ---
 
 <!doctype html>
@@ -25,11 +28,12 @@ import '../styles/global.css';
 	<body class="bg-[#171F29]">
 		<header class="mobile lg:hidden">
 			<div class="flex justify-center pt-12 pb-[5px]">
-				<img src="./assaly.ch-logo.svg" alt="">
+				<img class="w-[165px]" src="./assaly.ch-logo.svg" alt="">
 			</div>
 			<div class="flex justify-between px-5">
-				<button title="menu-toggle" class="text-white uppercase underline font-inter text-xs">Menu</button>
-				<button title="language" class="text-white uppercase underline font-inter text-xs">Language</button>
+				<button title="menu-toggle" class="text-white uppercase underline font-inter text-[14px] leading-normal">Menu</button>
+				<button title="language" class="text-white uppercase underline font-inter text-xs">AR...</button>
+				<button title="language" class="text-white uppercase underline font-inter text-[14px] leading-normal">Language</button>
 			</div>
 		</header>
 		<header class="desktop hidden lg:flex lg:max-w-[1440px] lg:mx-auto">
@@ -37,6 +41,7 @@ import '../styles/global.css';
 			<div class="flex w-full justify-between px-5 mt-16">
 				<button title="menu-toggle" class="text-white uppercase underline font-inter text-xs">Menu</button>
 				<img class="max-w-36" src="/assaly.ch-logo.svg" alt="">
+				<a href={getRelativeLocaleUrl(currentLang, 'about')} title="language" class="text-white uppercase underline font-inter text-xs">AR...</a>
 				<button title="language" class="text-white uppercase underline font-inter text-xs">Language</button>
 			</div>
 		</header>

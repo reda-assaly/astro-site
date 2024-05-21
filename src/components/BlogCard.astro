@@ -6,10 +6,10 @@ const { title, coverImage, excerpt, slug,category } = Astro.props;
 
 <div>
     <div class="flex mb-[18px]">
-        <div class="inline-flex items-center justify-center gap-[10px] bg-white rounded-[7px] text-[#171F29] font-inter font-[700] text-[10px] uppercase px-[10px]  py-[3px]">{category}</div>
+        <div class="inline-flex items-center justify-center gap-[10px] bg-white rounded-[7px] text-[#171F29] font-inter font-[700] text-[10px] uppercase px-[12px]  py-[5px]">{category}</div>
     </div>
     <div class="grid grid-cols-[4fr,2fr]">
-        <p class="text-white font-inter">{excerpt}</p>
+        <p class="text-white font-inter leading-normal">{excerpt}</p>
         <a class="text-[#FEEF50] italic underline text-end" href={`/blog/${slug}`} title={`Link to ${title}`}>Read more</a>
     </div>
 </div>
