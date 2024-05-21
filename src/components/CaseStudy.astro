@@ -28,7 +28,7 @@ const { Content } =  entry;
       ))
     }
   </div>
-  <div  class="definitions my-4 font-inter text-[14px] font-[400] leading-[16px]"></div>
+  <div  class="definitions hidden my-4 font-inter text-[14px] font-[400] leading-[16px]"></div>
   <div class="flex justify-between items-end">
     <h2 class="font-gabriela text-[32px] text-[#171F29] font-[600] italic leading-[30px]">{title}</h2>
     <button
@@ -122,6 +122,8 @@ const { Content } =  entry;
     let jsDefinitions = container.getAttribute("data-definitions").split('||');
     if(item.classList.contains("active")){
       item.classList.remove("active");
+      container.querySelector(".definitions").classList.add("hidden");
+      container.querySelector(".definitions").classList.remove("block");
       container.querySelector(".definitions").innerHTML = "";
     }else{
       document.querySelectorAll(".pill").forEach((pill) => {
@@ -135,6 +137,8 @@ const { Content } =  entry;
     let index = parseInt(item.getAttribute('data-index'));
     let definition = jsDefinitions[index];
     if (index > -1) { 
+      container.querySelector(".definitions").classList.remove("hidden");
+      container.querySelector(".definitions").classList.add("block");
       container.querySelector(".definitions").innerHTML = definition
     }
     }
