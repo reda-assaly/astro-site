@@ -32,7 +32,7 @@ const currentLang = Astro.params.lang || 'en';
 			</div>
 			<div class="flex justify-between px-5">
 				<button title="menu-toggle" class="menu-toggle text-white uppercase underline font-inter text-[14px] leading-normal">Menu</button>
-				<button title="language" class="text-white uppercase underline font-inter text-[14px] leading-normal">Language</button>
+				<button title="language" class="lang-toggle text-white uppercase underline font-inter text-[14px] leading-normal">Language</button>
 			</div>
 
 			<div class="menu fixed z-20 top-0 w-screen h-screen pt-14 hidden flex-col items-center gap-9 bg-[#FEEF50]">
@@ -42,6 +42,14 @@ const currentLang = Astro.params.lang || 'en';
 				<a href="#" title="language" class=" italic text-[#171F29] font-gabriela font-[600] text-[30px] leading-normal">Online Advertising<a>
 				<a href="#" title="language" class=" italic text-[#171F29] font-gabriela font-[600] text-[30px] leading-normal">E-commerce<a>
 					<button class="menuCloseButton text-[#171F29] underline uppercase font-inter font-[700] text-[12px] leading-[160%] self-end">CLOSE</button>
+			</div>
+			<div class="lang-menu fixed z-20 top-0 w-screen h-screen pt-14 hidden flex-col items-center gap-9 bg-[#FEEF50]">
+				<img class="w-[165px]" src="./assaly.ch-logo-transparent.svg" alt="">
+				<a href="#" title="language" class=" italic text-[#171F29] font-gabriela font-[600] text-[30px] leading-normal">Digital Design<a>
+				<a href="#" title="language" class=" italic text-[#171F29] font-gabriela font-[600] text-[30px] leading-normal">Search Engine Optimization<a>
+				<a href="#" title="language" class=" italic text-[#171F29] font-gabriela font-[600] text-[30px] leading-normal">Online Advertising<a>
+				<a href="#" title="language" class=" italic text-[#171F29] font-gabriela font-[600] text-[30px] leading-normal">E-commerce<a>
+					<button class="langCloseButton text-[#171F29] underline uppercase font-inter font-[700] text-[12px] leading-[160%] self-end">CLOSE</button>
 			</div>
 		</header>
 		<header class="desktop hidden lg:flex lg:max-w-[1440px] lg:mx-auto">
@@ -62,8 +70,11 @@ const currentLang = Astro.params.lang || 'en';
 <script>
 
 const menu = document.querySelector('.menu');
+const langMenu = document.querySelector('.lang-menu');
 const menuCloseButton = document.querySelector('.menuCloseButton');
+const langCloseButton = document.querySelector('.langCloseButton');
 const menuToggle = document.querySelector('.menu-toggle');
+const langToggle = document.querySelector('.lang-toggle');
 menuToggle.addEventListener('click', () => {
 	menu.classList.remove('hidden')
 	menu.classList.add('flex')
@@ -72,5 +83,14 @@ menuCloseButton.addEventListener('click', () => {
 	menu.classList.add('hidden')
 	menu.classList.remove('flex')
 
+})
+
+langToggle.addEventListener('click', () => {
+	langMenu.classList.remove('hidden')
+	langMenu.classList.add('flex')
+})
+langCloseButton.addEventListener('click', () => {
+	langMenu.classList.add('hidden')
+	langMenu.classList.remove('flex')
 })
 </script>
