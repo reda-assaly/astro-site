@@ -91,6 +91,8 @@ const { Content } =  entry;
         pill.classList.remove("active");
       })
       document.querySelector("body").classList.add("overflow-hidden");
+      container.querySelector(".definitions").classList.add("hidden");
+      container.querySelector(".definitions").classList.remove("block");
       container.querySelector(".definitions").innerHTML = ''
     });
   });
