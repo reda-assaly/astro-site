@@ -6,6 +6,8 @@ export default {
 			fontFamily: {
 				'gabriela': ['Gabriela'],
 				'inter': ['Inter'],
+				'nato-ar': ['Noto Sans Arabic'],
+				'nato': ['Noto Sans'],
 			},
 		},
 	},
