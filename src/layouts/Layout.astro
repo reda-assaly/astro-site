@@ -128,4 +128,12 @@ langCloseButton.addEventListener('click', () => {
 	hireUs.classList.remove('hidden')
 	document.querySelector('body').classList.remove('overflow-hidden')
 })
+
+const allLinks = document.querySelectorAll('footer a');
+
+for (const link of allLinks) {
+  if (!link.hasAttribute('href')) {
+    link.remove();
+  }
+}
 </script>
