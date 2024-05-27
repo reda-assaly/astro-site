@@ -5,6 +5,8 @@ interface Props {
 
 const { title } = Astro.props;
 
+import FooterDesktop from '../components/FooterDesktop.astro';
+import FooterMobile from '../components/FooterMobile.astro';
 import '../styles/global.css';
 import { getRelativeLocaleUrl } from 'astro:i18n';
 
@@ -83,6 +85,10 @@ const currentLang = Astro.params.lang || 'en';
 		<main class="lg:max-w-[1440px] lg:mx-auto">
 		<slot />
 		</main>
+		<footer >
+			<FooterMobile />
+			<FooterDesktop />
+		</footer>
 	</body>
 </html>
 
