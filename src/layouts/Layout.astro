@@ -86,7 +86,7 @@ const currentLang = Astro.params.lang || 'en';
 			  
 
 
-			<div class="lang-menu fixed z-20 top-0 w-screen h-screen pt-14 hidden flex-col items-center justify-between bg-[#FEEF50]">
+			<!-- <div class="lang-menu fixed z-20 top-0 w-screen h-screen pt-14 hidden flex-col items-center justify-between bg-[#FEEF50]">
 				<img class="w-[165px]" src="./assaly.ch-logo-transparent.svg" alt="">
 				<div class="flex flex-col items-center gap-y-[28px] mx-[20%]">
 					<a href="#" title="language" class=" italic text-[#171F29] font-gabriela font-[600] text-[30px] leading-normal">English<a>
@@ -97,7 +97,25 @@ const currentLang = Astro.params.lang || 'en';
 				<div class="bottom-[10svh] absolute flex justify-center">
 					<button class="langCloseButton text-[#171F29] underline uppercase font-inter font-[700] text-[12px] leading-[160%]">CLOSE</button>
 				</div>
-			</div>
+			</div> -->
+
+			<div class="lang-menu fixed hidden z-20 top-0 left-0 w-full h-[100svh] flex-col bg-[#FEEF50]">
+				<div class="flex justify-center py-4 pt-14">
+					<img class="w-[165px]" src="./assaly.ch-logo-transparent.svg" alt="">
+				</div>
+				<div class="flex flex-grow overflow-y-auto w-full">
+				  <div class="flex flex-col gap-y-[28px] mx-[20%] py-8 w-full">
+						<a href="#" title="language" class="  text-[#171F29] font-nato font-[600] text-[30px] leading-normal">简体中文<a>
+						<a href="#" title="language" class="text-[#171F29] font-nato-ar font-[600] text-[30px] leading-normal">العربية<a>
+						<a href="#" title="language" class=" italic text-[#171F29] font-gabriela font-[600] text-[30px] leading-normal">Français<a></a>
+				  </div>
+				</div>
+				<div class="flex justify-center pb-14 pt-5">
+				  <button class="langCloseButton text-[#171F29] underline uppercase font-inter font-[700] text-[12px] leading-[160%]">Close</button>
+				</div>
+			  </div>
+
+
 		</header>
 		<header class="desktop hidden lg:flex lg:max-w-[1440px] lg:mx-auto">
 			
